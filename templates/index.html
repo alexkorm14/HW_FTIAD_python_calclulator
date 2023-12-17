@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyCalculator</title>
+    <style>
+        body {
+            background-color: lightgreen;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .calculator {
+            text-align: center;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+        }
+        #expression,select {
+            width: 400px;
+            height: 40px;
+            margin-bottom: 10px;
+        }
+        #result {
+            margin-top: 20px;
+        }
+        #calculateButton {
+            background-color: lightblue;
+            border: none;
+            padding: 10px 20px;
+            margin-left: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <h2>MyCalculator</h2>
+        <form action="/calculate" method="post">
+        <input type="text" id="expression" name="expression" placeholder="type expression">
+        <button id="calculateButton" type="submit">=</button>
+        </form>
+        <div id="result">{{ result }}</div>
+    </div>
+
+</body>
+</html>
