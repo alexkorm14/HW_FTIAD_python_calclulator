@@ -31,8 +31,9 @@ class MyCalculator:
         for i in range(1,len(parsed_expression)):
             if i == 1 and parsed_expression[i-1] == '-' and isinstance(parsed_expression[i],float):
                 parsed_expression[i-1] = '--'   
-            elif (parsed_expression[i-1] == '-' and isinstance(parsed_expression[i-2],float) == False 
-                  and isinstance(parsed_expression[i],float)):
+            elif (parsed_expression[i-1] == '-' 
+            	and (isinstance(parsed_expression[i-2],float) == False and parsed_expression[i-2] != ')') 
+                and isinstance(parsed_expression[i],float)):
                 parsed_expression[i-1] = '--' 
         stack = []
         for token in parsed_expression:
